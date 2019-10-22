@@ -13,20 +13,18 @@ void test(double * arr_ptr, int N);
 void rand_update(double * arr_ptr, int N);
 
 /*
- * Step 1. Populate the array with squares of numbers, starting from 0.0
- */
-  // Fill nums with squares, using indexing
-  //   Position nums[0] wil contain 0.0, nums[1] 1.0, nums[2] 4.0, etc.
-  //   like this:
-  //   0.0, 1.0, 2.0, 9.0, 16.0, 25.0, ... 
-  // 
-  // TODO: complete this code to fill the array
+ * Step 1. TODO: Populate the array with squares of numbers, starting from 0.0
+ *
+ * Fill nums with squares, using indexing
+ * Position nums[0] wil contain 0.0, nums[1] 1.0, nums[2] 4.0, etc. like this:
+ *    0.0, 1.0, 2.0, 9.0, 16.0, 25.0, ...  
+*/ 
 void populate(double * arr_ptr, int N) {
 
 }
 
 /*
- * Step 2. write this function 
+ * Step 2. TODO: Write this function 
  * 
  *  Given an array whose zeroth value is at arr_ptr and whose length is N,
  *  change every value of the array to the square root of its original value
@@ -36,7 +34,7 @@ void square_roots(double * arr_ptr, int N) {
 }
 
 /*
- * Step 3. Write this function
+ * Step 3. TODO: Write this function
  * 
  *  Given an array whose zeroth value is at arr_ptr and whose length is N,
  *  loops through array to test with an assert if every value at an index is
@@ -47,12 +45,12 @@ void test(double * arr_ptr, int N) {
 }
 
 /*
- * Step 4. Write this function
+ * Step 4. TODO: Write this function
  * 
  *   Given an array whose zeroth value is at arr_ptr and whose length is N,
  *   perform N random updates of the array by obtaining a random value between
- *   0 and N, then use it as the index of the array whose value will be updated to be 
- *   the square root of the current value at that postition.
+ *   0 and N, then use it as the index of the array whose value will be updated
+ *   to be the square root of the current value at that postition.
  */
 void rand_update(double * arr_ptr, int N) {
 
@@ -72,11 +70,13 @@ int main(int argc, char *argv[]) {
     double * nums;   // will hold a dynamically allocated array
 
     int array_length = DEFAULT_N;   // default if nothing entered on command line
-    // argc is the total number of arguments, including the invoking of the program
-    // argv[] is an array of strings
-    // argv[0] always has the name of the program
-    // argv[1] has the first argument typed
-    //
+    /*
+     * argc is the total number of arguments, including the invoking of the
+     * program
+     * argv[] is an array of strings 
+     * argv[0] always has the name of the program
+     * argv[1] has the first argument typed
+     */
     if (argc > 1) {  // if we have provided a length
         array_length = atoi(argv[1]);    // atoi converts a string to an int
     }
@@ -84,10 +84,14 @@ int main(int argc, char *argv[]) {
     ///////////// Array creation
 
     begin = clock();  // start the timing
-    // Step 0. allocate space for the array on the heap
-    // 
-    // TODO: add code here for allocating the array
 
+    //////////////////////////////////////////////////////////////////////
+    /* Step 0. allocate space for the array on the heap
+     * TODO: add code here for allocating the array
+     */
+
+
+    //////////////////////////////////////////////////////////////////////
 
     end = clock();  // end the timing
     time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
@@ -101,7 +105,7 @@ int main(int argc, char *argv[]) {
     end = clock();
     time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
     printf("Time to fill array: %f seconds\n", time_spent);
-    ////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////
 
     //////////////////////// time how long it takes to change all the values to be the square root
     begin = clock();
@@ -112,7 +116,7 @@ int main(int argc, char *argv[]) {
     end = clock();
     time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
     printf("Time to compute square_roots: %f seconds\n", time_spent);
-    ////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////
 
     // check whether accurate without printing by using the function called test
     test(nums, array_length);
@@ -125,7 +129,7 @@ int main(int argc, char *argv[]) {
     end = clock();
     time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
     printf("Time to fill array again: %f seconds\n", time_spent);
-    ////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////
 
     /////////////////// time how long it takes to perform updates at random locations
     begin = clock();
@@ -136,10 +140,15 @@ int main(int argc, char *argv[]) {
     end = clock();
     time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
     printf("Time to compute random square_roots: %f seconds\n", time_spent);
-    ////////////////////////////////////////////////////////////////////////////////
 
-    // Step 5. make sure to remove the array nums that was allocated to the heap
+    //////////////////////////////////////////////////////////////////////
+
+    /* TODO: Step 5. make sure to remove the array nums that was allocated to
+     * the heap
+     */
     
   
+    //////////////////////////////////////////////////////////////////////
+
     return 0;
 }
