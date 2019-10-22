@@ -1,75 +1,77 @@
-# What you are given
+# Dynamic Array Access and Efficiency
 
-You have a code file called `dynamic_array.c` that needs to be completed. It can
+For this assignment, you will practice the concepts of locality and cache
+organization through the use of large arrays.
+
+You must complete the code in `dynamic_array.c`. It can
 be made with the provided Makefile. It creates an executable named **dynamic**
 that can be run as follows:
 
     ./dynamic 16000000
+
+The number is a command line argument which specifies the size of the array your
+code will generate.
     
-Note that we will be trying this code with very large array sizes so that we can
-see how much time it takes to create or manipulate the array.
+## Problem Definition
 
-The overall goal is to complete the following steps so that your code will be
-able to create arrays of varying sizes and populate them with values as
-described and change them with other functions that you will write. Then you
-will be observing how well these functions perform. This will enable you to
-quantify some of the concepts we have been learning about locality of our
-programs and how the organization of cache creates better performing programs
-that have good locality.
+You will:
 
-## What you will complete
+* Finish the TODOs in `dynamic_array.c`
+* Run your code on arrays of various sizes
+* Identify the least efficient of the four functions in your C code
 
 There are several steps needed to get this code completed. You should be able to
 `make` after each step to ensure that your code is compiling. Note that making
-and running as you go along makes it easier to fix your mistakes as you go
-along.
+and running as you go along makes it easier to fix your mistakes.
 
 Each step described below is also a good point to commit and push your work to
 GitHub!
 
-### Set up your array in main
-As step 0, complete the code in main to create the dynamically allocated array
-named nums. Make to be sure it compiles; you can run, but times reported will be
-short to non-existent.
+### Steps
 
+0. In main, create the dynamically allocated array named `nums`. Check that it
+compiles. You can run your code, but times reported will be short to
+non-existent.
 
-1. Complete the function called populate as described in the code. Note that you
-will need to cast the integer index in your loop to a double before multiplying
-it by itself- you need to create doubles in the array. (make to be sure it
-compiles; you can run with a fairly large size and see how many milliseconds it
-takes to populate it)
+1. Complete the function called `populate` as described in the code. Note that
+you will need to cast the integer index in your loop to a double before
+multiplying it by itself--you need to fill the array with doubles. Compile and
+run and commit. 
 
-2. Complete the function called square_roots as described in the code. Note for
-this step that the math.h library has a function called sqrt that you should
-use. (make and run again)
+2. Complete the function called `square_roots` as described in the code. Use the
+math.h library for this step. Compile and run and commit. 
 
-3. Complete the function called test as described in the code. (make and run
-again)
+3. Complete the function called `test` as described in the code. Compile and run
+and commit. 
 
-4. Complete the function called rand_update as described in the code. This one
-requires you to find out how to use the C function rand() to generate an integer
-between 0 and the size of the array - 1. (make and run again)
+4. Complete the function called `rand_update` as described in the code. This one
+requires you to use the C function rand() to generate an integer between 0 and
+the size of the array - 1. Compile and run and commit.
 
-5. Add the line of code in the end of main() needed to give the array nums back
-and effectively de-allocate it and take it off of the run-time heap.
+5. Add the line of code in the end of main() needed to give the array `nums`
+back and effectively de-allocate it and take it off of the run-time heap.
+Compile and run and commit.
 
-## Study results and report
+## Identify the inefficient function
 
-Study the code in main to see how we can use a function from time.h called
-clock() to give a system wall clock time. We take a time before a particular
-section of code, then a time after it-- the difference, divided by a special
-constant from  time.h called CLOCKS_PER_SEC tells us how many seconds that
-section of code took.
+For this part of the assignment, please create a plain text file named
+`report.txt`, and submit it as part of your GitHub repository.
 
-Try running your program on varying sizes of your array from 16000000 (sixteen
-million) elements to 60000000 (sixty million). These are sizes which should give
-times that are over a millisecond, except for the malloc, which is quite fast.
+In `main`, we use a function from `time.h` called `clock()` to give a
+system wall clock time. We capture the time before and after a section of code,
+and use the difference divided by the constant `CLOCKS_PER_SEC` to determine how
+many seconds that section of code took to run.
 
-{Submit Answer!|assessment}(free-text-1693658693)
+Run your program on varying size arrays, ranging from 16000000 to 60000000.
+These should give times over one millisecond, excepting the call to `malloc`,
+which is fast.
+
+* Which function in `dynamic_arrays.c` takes the longest time to run? Explain
+ why this is the case. Your answer can be just a few sentences long.
 
 ## Grading criteria
 
 1. Good coding practice applies in regard to a header comment in the file for
 this program with your name in it, proper indenting, and readability.
 2. Your functions should work correctly as described.
-3. You answer the question above correctly.
+3. You answer the question above correctly in a file named `report.txt`.
