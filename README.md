@@ -71,7 +71,7 @@ which is fast.
 
 ## Grading criteria
 
-1. Good coding practice applies in regard to a header comment in the file for
-this program with your name in it, proper indenting, and readability.
+1. Good coding practice: correctly indented/formatted code, header comment
+describing the program, name in header comment, readable.
 2. Your functions should work correctly as described.
 3. You answer the question above correctly in a file named `report.txt`.
