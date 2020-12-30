@@ -16,7 +16,7 @@ void rand_update(double * arr_ptr, int N);
  * Step 1. TODO: Populate the array with squares of numbers, starting from 0.0
  *
  * Fill nums with squares, using indexing
- * Position nums[0] wil contain 0.0, nums[1] 1.0, nums[2] 4.0, etc. like this:
+ * Position nums[0] will contain 0.0, nums[1] 1.0, nums[2] 4.0, etc. like this:
  *    0.0, 1.0, 2.0, 9.0, 16.0, 25.0, ...  
 */ 
 void populate(double * arr_ptr, int N) {
