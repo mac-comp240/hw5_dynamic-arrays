@@ -16,8 +16,8 @@ code will generate.
 
 You will:
 
-* Finish the TODOs in `dynamic_array.c`
-* Run your code on arrays of various sizes
+* Complete the code in `dynamic_array.c`
+* Run your code on arrays of various (large) sizes
 * Identify the least efficient of the four functions in your C code
 
 There are several steps needed to get this code completed. You should be able to
@@ -29,28 +29,40 @@ GitHub!
 
 ### Steps
 
-0. In main, create the dynamically allocated array named `nums`. Check that it
+0. In `main`, create the dynamically allocated array named `nums`. Check that it
 compiles. You can run your code, but times reported will be short to
 non-existent.
 
-1. Complete the function called `populate` as described in the code. Note that
-you will need to cast the integer index in your loop to a double before
-multiplying it by itself--you need to fill the array with doubles. Compile and
-run and commit. 
+1. Complete the function called `populate` as described here (and in the code).
+   a. Given the array and its length, write code to fill the array with values
+   b. At each index `i` in the array, store the square of `i`
+   c. Note that you will need to cast the integer index `i` to a double before
+multiplying it by itself--you need to fill the array with doubles
+   d. Compile and run your code until this function works, then be sure to **commit**!
 
-2. Complete the function called `square_roots` as described in the code. Use the
-math.h library for this step. Compile and run and commit. 
+2. Complete the function called `square_roots` as described here (in the code)
+   a. Given an array `arr_ptr` and given its length `N`, change every value in the array to the
+   square root of its original value
+   b. Use the `math.h` library, which contains a `sqrt` function
+   c. Compile and run your code until this function works, then be sure to **commit**!
 
-3. Complete the function called `test` as described in the code. Compile and run
-and commit. 
+3. Complete the function called `test` as described here (and in the code)
+   a. Given an array `arr_ptr` and its length `N`, this function should loop through the array
+   and check whether the value at each index is equal to the index
+   b. Use `assert` to do the checks
+   c. Be careful about types here!
+   b. Compile and run your code until this function works, then be sure to **commit**!
 
-4. Complete the function called `rand_update` as described in the code. This one
-requires you to use the C function rand() to generate an integer between 0 and
-the size of the array - 1. Compile and run and commit.
+4. Complete the function called `rand_update` as described here (and in the code).
+   a. This function takes in an array `arr_ptr` and its length `N`
+   b. It should loop `N` times
+   c. Inside the loop, it should generate a random integer value between 0 and `N-1`
+   d. It should use the random integer as an index into the array, and it should change the
+   value in the array at that index to be the square root of its previous value
+   e. Use the C function `rand` to generate the random integer
+   f. Compile and run your code until this function works, then be sure to **commit**!
 
-5. Add the line of code in the end of main() needed to give the array `nums`
-back and effectively de-allocate it and take it off of the run-time heap.
-Compile and run and commit.
+5. At the end of `main` add code needed to de-allocate the `nums` array; Compile, run, and commit!
 
 ## Identify the inefficient function
 
