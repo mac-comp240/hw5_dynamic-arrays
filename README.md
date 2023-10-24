@@ -34,11 +34,11 @@ compiles. You can run your code, but times reported will be short to
 non-existent.
 
 1. Complete the function called `populate` as described here (and in the code).
-   a. Given the array and its length, write code to fill the array with values
-   b. At each index `i` in the array, store the square of `i`
-   c. Note that you will need to cast the integer index `i` to a double before
+    - Given the array and its length, write code to fill the array with values
+    - At each index `i` in the array, store the square of `i`
+    - Note that you will need to cast the integer index `i` to a double before
 multiplying it by itself--you need to fill the array with doubles
-   d. Compile and run your code until this function works, then be sure to **commit**!
+    - Compile and run your code until this function works, then be sure to **commit**!
 
 2. Complete the function called `square_roots` as described here (in the code)
    a. Given an array `arr_ptr` and given its length `N`, change every value in the array to the
