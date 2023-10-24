@@ -41,26 +41,26 @@ multiplying it by itself--you need to fill the array with doubles
     - Compile and run your code until this function works, then be sure to **commit**!
 
 2. Complete the function called `square_roots` as described here (in the code)
-   a. Given an array `arr_ptr` and given its length `N`, change every value in the array to the
+   - Given an array `arr_ptr` and given its length `N`, change every value in the array to the
    square root of its original value
-   b. Use the `math.h` library, which contains a `sqrt` function
-   c. Compile and run your code until this function works, then be sure to **commit**!
+   - Use the `math.h` library, which contains a `sqrt` function
+   - Compile and run your code until this function works, then be sure to **commit**!
 
 3. Complete the function called `test` as described here (and in the code)
-   a. Given an array `arr_ptr` and its length `N`, this function should loop through the array
+   - Given an array `arr_ptr` and its length `N`, this function should loop through the array
    and check whether the value at each index is equal to the index
-   b. Use `assert` to do the checks
-   c. Be careful about types here!
-   b. Compile and run your code until this function works, then be sure to **commit**!
+   - Use `assert` to do the checks
+   - Be careful about types here!
+   - Compile and run your code until this function works, then be sure to **commit**!
 
 4. Complete the function called `rand_update` as described here (and in the code).
-   a. This function takes in an array `arr_ptr` and its length `N`
-   b. It should loop `N` times
-   c. Inside the loop, it should generate a random integer value between 0 and `N-1`
-   d. It should use the random integer as an index into the array, and it should change the
+   - This function takes in an array `arr_ptr` and its length `N`  
+   - It should loop `N` times
+   - Inside the loop, it should generate a random integer value between 0 and `N-1`
+   - It should use the random integer as an index into the array, and it should change the
    value in the array at that index to be the square root of its previous value
-   e. Use the C function `rand` to generate the random integer
-   f. Compile and run your code until this function works, then be sure to **commit**!
+   - Use the C function `rand` to generate the random integer
+   - Compile and run your code until this function works, then be sure to **commit**!
 
 5. At the end of `main` add code needed to de-allocate the `nums` array; Compile, run, and commit!
 
