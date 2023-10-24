@@ -49,7 +49,7 @@ void test(double * arr_ptr, int N) {
  * 
  *   Given an array whose zeroth value is at arr_ptr and whose length is N,
  *   perform N random updates of the array by obtaining a random value between
- *   0 and N, then use it as the index of the array whose value will be updated
+ *   0 and N-1, then use it as the index of the array whose value will be updated
  *   to be the square root of the current value at that postition.
  */
 void rand_update(double * arr_ptr, int N) {
