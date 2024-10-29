@@ -17,7 +17,7 @@ void rand_update(double * arr_ptr, int N);
  *
  * Fill nums with squares, using indexing
  * Position nums[0] will contain 0.0, nums[1] 1.0, nums[2] 4.0, etc. like this:
- *    0.0, 1.0, 2.0, 9.0, 16.0, 25.0, ...  
+ *    0.0, 1.0, 4.0, 9.0, 16.0, 25.0, ...  
 */ 
 void populate(double * arr_ptr, int N) {
 
@@ -59,6 +59,8 @@ void rand_update(double * arr_ptr, int N) {
 /*
  * Program that creates an array by dynamically allocating it. 
  * Then that array is manipulated by the functions defined above.
+ * Takes in an optional command-line argument that defines the length of the
+ * array to be allocated.
  */
 int main(int argc, char *argv[]) {
   
@@ -66,7 +68,7 @@ int main(int argc, char *argv[]) {
     clock_t begin, end;
     double time_spent;
 
-    ///////////// Array creation
+    // ---------------- Array creation
     double * nums;   // will hold a dynamically allocated array
 
     int array_length = DEFAULT_N;   // default if nothing entered on command line
@@ -77,27 +79,23 @@ int main(int argc, char *argv[]) {
      * argv[0] always has the name of the program
      * argv[1] has the first argument typed
      */
-    if (argc > 1) {  // if we have provided a length
+    if (argc > 1) {  // if user has provided an array length
         array_length = atoi(argv[1]);    // atoi converts a string to an int
     }
     printf("For program %s, array length is set to %d\n", argv[0], array_length);
-    ///////////// Array creation
 
+    // ---------------- Time array allocation
     begin = clock();  // start the timing
 
-    //////////////////////////////////////////////////////////////////////
     /* Step 0. allocate space for the array on the heap
      * TODO: add code here for allocating the array
      */
-
-
-    //////////////////////////////////////////////////////////////////////
 
     end = clock();  // end the timing
     time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
     printf("Time to malloc array: %f seconds\n", time_spent); 
 
-    //////////////////////  time how long it takes to populate the array with values
+    // ---------------- Time populating array with squares
     begin = clock();
 
     populate(nums, array_length);
@@ -105,50 +103,44 @@ int main(int argc, char *argv[]) {
     end = clock();
     time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
     printf("Time to fill array: %f seconds\n", time_spent);
-    //////////////////////////////////////////////////////////////////////
 
-    //////////////////////// time how long it takes to change all the values to be the square root
+    // ---------------- Time changing values to square-root
     begin = clock();
 
-    // set values to square root of each element by calling function square_roots
     square_roots(nums, array_length);
 
     end = clock();
     time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
     printf("Time to compute square_roots: %f seconds\n", time_spent);
-    //////////////////////////////////////////////////////////////////////
 
-    // check whether accurate without printing by using the function called test
+
+    // ---------------- Check accuracy
     test(nums, array_length);
 
-    ///////////////////// time how long it takes to re-fill the array
+    // ---------------- Time re-populating array with squares
     begin = clock();
-    // re-fill nums with squares, using indexing
-    // 0.0, 1.0, 2.0, 4.0, 8.0, 16.0, etc.
+
     populate(nums, array_length);
+
     end = clock();
     time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
     printf("Time to fill array again: %f seconds\n", time_spent);
-    //////////////////////////////////////////////////////////////////////
 
-    /////////////////// time how long it takes to perform updates at random locations
+
+    // ---------------- Time performing updates at random locations
     begin = clock();
 
-    // set values to square root of each element by calling function square_roots
     rand_update(nums, array_length);
 
     end = clock();
     time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
     printf("Time to compute random square_roots: %f seconds\n", time_spent);
 
-    //////////////////////////////////////////////////////////////////////
 
     /* TODO: Step 5. make sure to remove the array nums that was allocated to
      * the heap
      */
     
   
-    //////////////////////////////////////////////////////////////////////
-
     return 0;
 }
