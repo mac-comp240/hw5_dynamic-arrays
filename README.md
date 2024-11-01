@@ -12,7 +12,7 @@ that, along with your explanation for why
 
 
 ### Rubric
-* * `report.txt` (3 points)
+* `report.txt` (3 points)
     - Text file contains a short paragraph that correctly identifies
     which function is slowest, and provides a **correct** explanation for why.
 * `dynamic_array.c` (19 points)
@@ -45,7 +45,7 @@ make
 ./dynamic 160000
 ```
 
-### Command-line arguments to in C
+### Command-line arguments in C
 
 This program has a `main` function that is set up to allow for command-line arguments.
 This means that when we run the executable in the shell, we can pass information
