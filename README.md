@@ -12,7 +12,7 @@ that, along with your explanation for why
 
 
 ### Rubric
-* `report.txt` (3 points)
+* `TURNIN.md` (3 points)
     - Text file contains a short paragraph that correctly identifies
     which function is slowest, and provides a **correct** explanation for why.
 * `dynamic_array.c` (19 points)
@@ -154,8 +154,7 @@ At the end of `main` add code needed to de-allocate the `nums` array; Compile, r
 
 ### Step 6: Identify the inefficient function
 
-For this part of the assignment, please create a plain text file named
-`report.txt`, and submit it as part of your GitHub repository.
+For this part of the assignment, you will write a short report in `TURNIN.md`. 
 
 In `main`, we use a function from `time.h` called `clock()` to give a
 system wall clock time. We capture the time before and after a section of code,
@@ -173,3 +172,15 @@ In your report, answer this question:
 Based on what you have learned in class, explain what would cause this function 
 to be slower than the others.
 
+## Submission
+
+When you have completed the **code** for this assignment, make sure to complete the **report** 
+before final submission. Submit your report in a new file called `TURNIN.md`. Your report should include:
+
+* An answer to the question above: which function takes the longest time to run, and what explains that behavior?
+* A list of known bugs or issues in the code.
+    * Give as much detail as necessary for a grader to understand the issue! Do not write only that something does not work.
+* What challenges you faced while completing the assignment.
+    * Reflect on the experience of doing this work. What were some of the sticking points? Did you get help? How did you solve them?
+* What you learned through completing this assignment.
+    * Reflect on your learning. Did the assignment illustrate any course concepts or build on what you practiced in the activities? Is there anything that you understand better because of this homework?
